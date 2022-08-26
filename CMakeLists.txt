@@ -1,12 +1,12 @@
 project(XS4GCR Fortran C CXX)
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.10)
 
 set( CMAKE_VERBOSE_MAKEFILE off )
 set( CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" )
 set( CMAKE_fortran_COMPILER "gfortran" )
 get_filename_component (Fortran_COMPILER_NAME ${CMAKE_Fortran_COMPILER} NAME)
-set( CMAKE_C_COMPILER "gcc-9" )
-set( CMAKE_CXX_COMPILER "g++-9" )
+#set( CMAKE_C_COMPILER "gcc" )
+#set( CMAKE_CXX_COMPILER "g++" )
 set( CMAKE_CXX_FLAGS "-O2 -ftree-vectorize -std=c++11" )
 set( XS4GCR_INCLUDES )
 set( XS4GCR_LIBRARIES )
@@ -127,6 +127,9 @@ target_link_libraries (sandbox XS4GCR ${XS4GCR_LIBRARIES})
 
 add_executable(frag_table examples/frag_table.cpp )
 target_link_libraries (frag_table XS4GCR ${XS4GCR_LIBRARIES})
+
+add_executable(frag_table_picard examples/frag_table_picard.cpp )
+target_link_libraries (frag_table_picard XS4GCR ${XS4GCR_LIBRARIES})
 
 # show summary
 message (STATUS "CMAKE_SYSTEM .......... = ${CMAKE_SYSTEM}")
