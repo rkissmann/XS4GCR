@@ -131,6 +131,9 @@ target_link_libraries (frag_table XS4GCR ${XS4GCR_LIBRARIES})
 add_executable(frag_table_picard examples/frag_table_picard.cpp )
 target_link_libraries (frag_table_picard XS4GCR ${XS4GCR_LIBRARIES})
 
+add_executable(frag_table_picard_swap examples/frag_table_picard_swap.cpp )
+target_link_libraries (frag_table_picard_swap XS4GCR ${XS4GCR_LIBRARIES})
+
 # show summary
 message (STATUS "CMAKE_SYSTEM .......... = ${CMAKE_SYSTEM}")
 message (STATUS "BUILD_SHARED_LIBS ..... = ${BUILD_SHARED_LIBS}")
